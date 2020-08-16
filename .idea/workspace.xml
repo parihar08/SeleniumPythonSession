@@ -2,13 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b82e90d0-383a-4ff9-b1c9-b3dbad2b8f64" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Configurations/config.ini" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Utilities/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Utilities/customLogger.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Utilities/readProperties.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Utilities/excelUtils.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/com/qa/pytestsessions/log_ss_param_config_test_report" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/com/qa/pytestsessions/test_data_driven_excel.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Logs/automation.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Screenshots/test_login_10_45_35.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Screenshots/test_login_10_45_40.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Screenshots/test_login_10_45_57.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Screenshots/test_login_10_46_03.png" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/com/qa/pytestsessions/test_parameterization.py" afterPath="$PROJECT_DIR$/com/qa/pytestsessions/test_log_ss_param_config.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/qa/pytestsessions/conftest.py" afterPath="$PROJECT_DIR$/com/qa/pytestsessions/conftest.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/qa/pytestsessions/geckodriver.log" afterPath="$PROJECT_DIR$/com/qa/pytestsessions/geckodriver.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/qa/pytestsessions/test_parameterization.py" afterPath="$PROJECT_DIR$/com/qa/pytestsessions/test_parameterization.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/qa/pytestsessions/test_fixtures_param.py" afterPath="$PROJECT_DIR$/com/qa/pytestsessions/test_fixtures_param.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,20 +40,8 @@
       <file leaf-file-name="test_fixtures_param.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/com/qa/pytestsessions/test_fixtures_param.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="18" column="44" lean-forward="false" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="44" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_parameterization.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/com/qa/pytestsessions/test_parameterization.py">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
-              <caret line="17" column="28" lean-forward="true" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -55,11 +49,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="customLogger.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test_log_ss_param_config.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/com/qa/pytestsessions/test_log_ss_param_config.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="403">
+              <caret line="24" column="43" lean-forward="false" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_data_driven_excel.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/com/qa/pytestsessions/test_data_driven_excel.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-198">
+              <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="customLogger.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Utilities/customLogger.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="152">
+              <caret line="8" column="52" lean-forward="true" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -88,8 +106,20 @@
       <file leaf-file-name="conftest.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/com/qa/pytestsessions/conftest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="43" lean-forward="false" selection-start-line="0" selection-start-column="43" selection-end-line="0" selection-end-column="43" />
+            <state relative-caret-position="684">
+              <caret line="36" column="1" lean-forward="false" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="excelUtils.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Utilities/excelUtils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="14" column="43" lean-forward="true" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -143,17 +173,21 @@
         <option value="$PROJECT_DIR$/com/qa/pytestsessions/test_google.py" />
         <option value="$PROJECT_DIR$/com/qa/pytestsessions/test_google_fixtures.py" />
         <option value="$PROJECT_DIR$/com/qa/pytestsessions/test_fixtures_classes.py" />
-        <option value="$PROJECT_DIR$/com/qa/pytestsessions/test_fixtures_param.py" />
         <option value="$PROJECT_DIR$/pytestrough/conftest.py" />
         <option value="$PROJECT_DIR$/pytestrough/TestRough2.py" />
         <option value="$PROJECT_DIR$/pytestrough/TestRough1.py" />
         <option value="$PROJECT_DIR$/pytestrough/test_parameterization_rough.py" />
-        <option value="$PROJECT_DIR$/com/qa/pytestsessions/conftest.py" />
         <option value="$PROJECT_DIR$/com/qa/pytestsessions/test_global_fixture_conftest.py" />
         <option value="$PROJECT_DIR$/Configurations/config.ini" />
         <option value="$PROJECT_DIR$/Utilities/readProperties.py" />
         <option value="$PROJECT_DIR$/com/qa/pytestsessions/test_parameterization.py" />
         <option value="$PROJECT_DIR$/Utilities/customLogger.py" />
+        <option value="$PROJECT_DIR$/com/qa/pytestsessions/test_fixtures_param.py" />
+        <option value="$PROJECT_DIR$/com/qa/pytestsessions/test_log_ss_param_config.py" />
+        <option value="$PROJECT_DIR$/com/qa/pytestsessions/conftest.py" />
+        <option value="$PROJECT_DIR$/Utilities/excelUtils.py" />
+        <option value="$PROJECT_DIR$/com/qa/pytestsessions/test_data_driven.py" />
+        <option value="$PROJECT_DIR$/com/qa/pytestsessions/test_data_driven_excel.py" />
       </list>
     </option>
   </component>
@@ -202,6 +236,13 @@
             <path>
               <item name="SeleniumPythonSession" type="b2602c69:ProjectViewProjectNode" />
               <item name="SeleniumPythonSession" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="qa" type="462c0819:PsiDirectoryNode" />
+              <item name="pytestsessions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SeleniumPythonSession" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SeleniumPythonSession" type="462c0819:PsiDirectoryNode" />
               <item name="Configurations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -213,6 +254,11 @@
               <item name="SeleniumPythonSession" type="b2602c69:ProjectViewProjectNode" />
               <item name="SeleniumPythonSession" type="462c0819:PsiDirectoryNode" />
               <item name="Screenshots" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SeleniumPythonSession" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SeleniumPythonSession" type="462c0819:PsiDirectoryNode" />
+              <item name="TestData" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SeleniumPythonSession" type="b2602c69:ProjectViewProjectNode" />
@@ -233,6 +279,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/com/qa/pytestsessions" />
       <recent name="$PROJECT_DIR$/drivers" />
     </key>
   </component>
@@ -340,7 +387,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16809729" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -349,7 +395,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286445" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31922612" sideWeight="0.49713877" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31922612" sideWeight="0.49713877" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -392,20 +438,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/com/qa/seleniumsessions/AlertJSPopup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/com/qa/seleniumsessions/JQueryDropDown.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="31" lean-forward="true" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/com/qa/seleniumsessions/AuthPopUpHandle.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -735,21 +767,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/qa/pytestsessions/test_fixtures_param.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="44" lean-forward="false" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Configurations/config.ini">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="39" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Logs/automation.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/qa/pytestsessions/test_fixtures_param.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -761,36 +800,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/qa/pytestsessions/conftest.py">
+    <entry file="file://$PROJECT_DIR$/Utilities/customLogger.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="43" lean-forward="false" selection-start-line="0" selection-start-column="43" selection-end-line="0" selection-end-column="43" />
+        <state relative-caret-position="152">
+          <caret line="8" column="52" lean-forward="true" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/com/qa/pytestsessions/test_parameterization.py">
+    <entry file="file://$PROJECT_DIR$/Utilities/excelUtils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="28" lean-forward="true" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+        <state relative-caret-position="266">
+          <caret line="14" column="43" lean-forward="true" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/com/qa/pytestsessions/test_log_ss_param_config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="24" column="43" lean-forward="false" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Logs/automation.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+    <entry file="file://$PROJECT_DIR$/com/qa/pytestsessions/conftest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="36" column="1" lean-forward="false" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Utilities/customLogger.py">
+    <entry file="file://$PROJECT_DIR$/com/qa/pytestsessions/test_data_driven_excel.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="-198">
+          <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
