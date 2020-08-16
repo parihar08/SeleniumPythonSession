@@ -12,7 +12,7 @@ def init_chrome_driver(request):
         driver = webdriver.Chrome(ChromeDriverManager().install())
     if request.param == 'firefox':
         driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
-    request.cls.driver = driver
+    request.cls.driver =driver
     yield
     driver.close()
 
