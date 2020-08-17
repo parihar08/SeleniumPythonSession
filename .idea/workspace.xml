@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b82e90d0-383a-4ff9-b1c9-b3dbad2b8f64" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Utilities/randomgenerator.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Screenshots/test_login_13_27_08.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Screenshots/test_login_13_27_12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Screenshots/test_login_13_27_28.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Screenshots/test_login_13_27_31.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Logs/automation.log" afterPath="$PROJECT_DIR$/Logs/automation.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Utilities/customLogger.py" afterPath="$PROJECT_DIR$/Utilities/customLogger.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Utilities/readProperties.py" afterPath="$PROJECT_DIR$/Utilities/readProperties.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/qa/pytestsessions/geckodriver.log" afterPath="$PROJECT_DIR$/com/qa/pytestsessions/geckodriver.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/com/qa/pytestsessions/test_data_driven_excel.py" afterPath="$PROJECT_DIR$/com/qa/pytestsessions/test_data_driven_excel.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,7 +41,7 @@
       <file leaf-file-name="test_data_driven_excel.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/com/qa/pytestsessions/test_data_driven_excel.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-170">
+            <state relative-caret-position="513">
               <caret line="27" column="27" lean-forward="true" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
@@ -840,7 +831,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/com/qa/pytestsessions/test_data_driven_excel.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-170">
+        <state relative-caret-position="513">
           <caret line="27" column="27" lean-forward="true" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />

@@ -32,3 +32,11 @@ JavaScript error: resource://gre/modules/Sqlite.jsm, line 834: Error: Connection
 1597622736070	Marionette	INFO	Listening on port 58270
 1597622736159	Marionette	WARN	TLS certificate errors will be ignored for this session
 1597622753098	Marionette	INFO	Stopped listening on port 58270
+1597623119633	geckodriver	INFO	Listening on 127.0.0.1:58801
+1597623120649	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/bf/kx7p92dd5b98zbpfr_8rdjbc0000gn/T/rust_mozprofilecOJSx1"
+1597623121865	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1597623121866	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1597623121866	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1597623124687	Marionette	INFO	Listening on port 58813
+1597623124758	Marionette	WARN	TLS certificate errors will be ignored for this session
+1597623140683	Marionette	INFO	Stopped listening on port 58813

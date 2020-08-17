@@ -533,3 +533,29 @@
 08/16/2020 06:05:49 PM: INFO: ***********Entering Password***************
 08/16/2020 06:05:52 PM: INFO: ***********Clicking on Login Button***************
 08/16/2020 06:05:53 PM: INFO: ***********Generating Screenshot***************
+08/16/2020 06:11:14 PM: INFO: Current google-chrome version is 84.0.4147
+08/16/2020 06:11:14 PM: INFO: Get LATEST driver version for 84.0.4147
+08/16/2020 06:11:14 PM: INFO: Driver [/Users/Parihar08/.wdm/drivers/chromedriver/mac64/84.0.4147.30/chromedriver] found in cache
+08/16/2020 06:11:17 PM: INFO: ***********Verify Data Driven Excel | Screenshot Capture***************
+08/16/2020 06:11:17 PM: INFO: ***********Verify Config Property| Log Generation***************
+08/16/2020 06:11:17 PM: INFO: ***********Launching the URL***************
+08/16/2020 06:11:23 PM: INFO: ***********Entering Username***************
+08/16/2020 06:11:25 PM: INFO: ***********Entering Password***************
+08/16/2020 06:11:26 PM: INFO: ***********Clicking on Login Button***************
+08/16/2020 06:11:53 PM: INFO: ***********Generating Screenshot***************
+08/16/2020 06:11:55 PM: INFO: ***********Entering Username***************
+08/16/2020 06:11:56 PM: INFO: ***********Entering Password***************
+08/16/2020 06:11:57 PM: INFO: ***********Clicking on Login Button***************
+08/16/2020 06:11:59 PM: INFO: ***********Generating Screenshot***************
+08/16/2020 06:11:59 PM: INFO: Driver [/Users/Parihar08/.wdm/drivers/geckodriver/macos/v0.27.0/geckodriver] found in cache
+08/16/2020 06:12:04 PM: INFO: ***********Verify Data Driven Excel | Screenshot Capture***************
+08/16/2020 06:12:04 PM: INFO: ***********Verify Config Property| Log Generation***************
+08/16/2020 06:12:05 PM: INFO: ***********Launching the URL***************
+08/16/2020 06:12:11 PM: INFO: ***********Entering Username***************
+08/16/2020 06:12:12 PM: INFO: ***********Entering Password***************
+08/16/2020 06:12:13 PM: INFO: ***********Clicking on Login Button***************
+08/16/2020 06:12:14 PM: INFO: ***********Generating Screenshot***************
+08/16/2020 06:12:17 PM: INFO: ***********Entering Username***************
+08/16/2020 06:12:18 PM: INFO: ***********Entering Password***************
+08/16/2020 06:12:19 PM: INFO: ***********Clicking on Login Button***************
+08/16/2020 06:12:20 PM: INFO: ***********Generating Screenshot***************
