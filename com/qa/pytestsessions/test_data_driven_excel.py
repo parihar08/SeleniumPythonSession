@@ -18,13 +18,14 @@ class TestHubSpot(BaseTest):
 
     logger = LogGen.logGen()
     #Excel File Path
-    path = "../../../TestData/LoginData.xlsx"
+    path = "TestData/LoginData.xlsx"
 
     #@pytest.mark.parametrize("username, password",
     #                        [
     #                             ("admin@gmail.com","admin123"),
     #                            ("pari_indiana88@yahoo.com","Calgary_88")
     #                       ])
+    @pytest.mark.datadriven
     def test_login(self):
         self.logger.info("***********Verify Data Driven Excel | Screenshot Capture***************")
         self.logger.info("***********Verify Config Property| Log Generation***************")
@@ -43,8 +44,12 @@ class TestHubSpot(BaseTest):
             self.passWord = excelUtils.readData(self.path, 'Sheet1',row , 2)
 
         #Using Data read from Excel File
+            time.sleep(2)
+            self.driver.find_element(By.ID, 'username').clear()
             self.driver.find_element(By.ID,'username').send_keys(self.userName)
             self.logger.info("***********Entering Username***************")
+
+            self.driver.find_element(By.ID, 'password').clear()
             time.sleep(1)
             self.driver.find_element(By.ID, 'password').send_keys(self.passWord)
             self.logger.info("***********Entering Password***************")
@@ -53,10 +58,7 @@ class TestHubSpot(BaseTest):
             self.logger.info("***********Clicking on Login Button***************")
             time.sleep(1)
 
-            #self.driver.find_element(By.ID, 'username').clear()
-            #self.driver.find_element(By.ID, 'password').clear()
-
             x = datetime.datetime.now()
             hms = x.strftime("%H_%M_%S")
-            self.driver.save_screenshot("../../../Screenshots/test_login_"+str(hms)+".png")
+            self.driver.save_screenshot("Screenshots/test_login_"+str(hms)+".png")
             self.logger.info("***********Generating Screenshot***************")
