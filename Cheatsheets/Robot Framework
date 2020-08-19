@@ -1,0 +1,16 @@
+#Robot Framework with Selenium
+
+pip3 install selenium
+
+pip3 install robotframework
+pip3 install --upgrade robotframework
+
+pip3 list
+pip3 show robotframework
+pip3 check robotframework
+
+pip3 install robotframework-seleniumlibrary
+
+#Install Intellibot selenium library patched plugin
+
+#Test case file extension: .robot

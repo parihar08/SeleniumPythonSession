@@ -1,0 +1,371 @@
+
+#How to upgrade pip
+
+pip3 install --upgrade pip
+
+-----------------------------------------------------------------------
+#Package Installation for Selenium with Python
+
+pip3 install selenium
+pip3 install webdriver-manager
+pip3 install pytest
+pip3 install pytest-html
+pip3 install pytest-xdist
+pip3 install openpyxl
+pip3 install allure-pytest
+pip3 install pytest-ordering (already installed) --for test ordering
+pip3 install behave         --for python behave framwork testing
+pip3 install allure-behave  --for generating Allure report in python behave framwork testing
+
+----------------------------------------------------------------------------------------------
+Install Gherkin plugin in Pycharm so that Pycharm can recognize the feature files
+----------------------------------------------------------------------------------------------
+How to run the python behave feature file for behavior driven testing (Python BDD Framework):
+
+Go to project directory:
+/Users/Parihar08/PycharmProjects/SeleniumPythonSession
+
+behave com/qa/pythonbehave/features/orangehrm.feature
+behave com/qa/pythonbehave/features/scenariooutline.feature
+behave com/qa/pythonbehave/features  (this will execute all the feature files under features folder)
+
+To generate Allure report:
+#This will create a new folder called reports under the main project directory and generate Allure reports in the json format
+
+behave -f allure_behave.formatter:AllureFormatter -o reports/ com/qa/pythonbehave/features/orangehrmlogin.feature
+
+#To convert Allure report from json format to HTML format, run the below command:
+
+allure serve reports/
+
+#Output
+Generating report to temp directory...
+Report successfully generated to /var/folders/bf/kx7p92dd5b98zbpfr_8rdjbc0000gn/T/5974807130607125642/allure-report
+Starting web server...
+
+
+------------------------------------------------------------------------------------------------------
+
+Pytest commands to run test cases:
+
+#Please Note:
+#Run test cases from main project directory as below so that its synced if we need to run from Jenkins
+
+py.test -v -s -m "datadriven" com/qa/pytestsessions/test_data_driven_excel.py
+
+#To run specific test file
+python3 test_demo1.py
+
+#Install pytest:
+
+pip3 install pytest
+
+pytest --version
+
+#Install pytest-xdist package for parallel execution
+
+pip3 install pytest-xdist
+
+
+#To run all test cases using pytest:
+
+py.test
+
+py.test -v -s test_google.py  //to get verbose and any primt statement
+
+py.test demo2_test.py
+
+py.test demo2_test.py demo3_test.py
+
+
+#To run test case with login in test case name:
+
+py.test -k login -v
+
+
+#Create specific markup for a test case by:
+
+@pytest.mark.login
+def test_m1():
+
+#To run test cases which are marked up as login:
+
+py.test -m login
+
+#To run test cases which are marked up as datadriven:
+
+py.test -v -s -m "datadriven" com/qa/pytestsessions/
+
+
+#Other Examples for marked test cases:
+-m "sanity"
+-m "regression"
+-m "sanity and regression"
+-m "sanity or regression"
+
+py.test test_demo1.py -m login
+
+#To run parallel test cases:
+
+py.test test_webpage_login.py -n 5   //where 5 is the number of threads
+
+
+#Below error while installing pytest-xdist package
+
+ERROR: Command errored out with exit status 1: /Library/Frameworks/Python.framework/Versions/3.8/bin/python3.8 -u -c 'import sys, setuptools, tokenize; sys.argv[0] = '"'"'/private/tmp/pip-install-ek7st9w0/psutil/setup.py'"'"'; __file__='"'"'/private/tmp/pip-install-ek7st9w0/psutil/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' install --record /private/tmp/pip-record-46ewjs8c/install-record.txt --single-version-externally-managed --compile --install-headers /Library/Frameworks/Python.framework/Versions/3.8/include/python3.8/psutil Check the logs for full command output.
+
+
+----------------------------------------------------
+
+#Install pytest-html package
+
+pip3 install pytest-html
+
+Run test and generate HTML report
+
+py.test -v -s test_google.py --html=google_test_report.html 
+
+------------------------------------------------------
+
+#Install openpyxl package for loading data through Excel spreadsheet
+
+pip3 install openpyxl
+
+------------------------------------------------------
+
+#Install allure-pytest package for generating Allure Reports
+
+pip3 install allure-pytest
+
+------------------------------------------------------
+
+py.test -v -s test_google_fixtures.py --html=google_fixture_report.html
+
+py.test -v -s test_fixtures_param.py --html=google_param_report.html
+
+
+#Fixtures
+
+Way of creating fixture:
+
+@pytest.fixture(scope='module')
+def init_driver():
+	global  driver
+    print('------------This is my setup---------------')
+    driver = webdriver.Chrome(ChromeDriverManager().install())
+    driver.implicitly_wait(10)
+    driver.delete_all_cookies()
+    driver.get("http://www.google.com/")
+
+    yield
+    print('------------This is my teardown----------------')
+    driver.quit()
+
+#The code before yield keyword will be executed before all test cases  --setup
+#The code after yield keyword will be executed after all test cases    --teardown
+
+
+2 ways of using fixture:
+
+def test_google_title(init_driver):
+    assert driver.title == 'Google'
+
+@pytest.mark.usefixtures("init_driver")
+def test_google_url():
+    assert driver.current_url == 'https://www.google.com/?gws_rd=ssl'
+
+
+#To create a global fixture which can be used in all classes:
+
+py.test -v -s test_global_fixture_conftest.py --html=conftest_report.html
+
+
+created a conftest.py file at Project folder location:
+
+/Users/Parihar08/PycharmProjects/SeleniumPythonSession/com/qa/pytestsessions
+
+add the global fixture code to be used in the conftest.py file:
+
+from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.firefox import GeckoDriverManager
+from selenium import  webdriver
+import pytest
+
+@pytest.fixture(params=['chrome','firefox'],scope='class')
+def init_chrome_driver(request):
+    if request.param == 'chrome':
+        driver = webdriver.Chrome(ChromeDriverManager().install())
+    if request.param == 'firefox':
+        driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
+    request.cls.driver = driver
+    yield
+    driver.close()
+
+-------------------------------------------------------------
+Test Case Ordering while execution
+
+@pytest.mark.run(order=2)
+def test1():
+    print("test1")
+
+@pytest.mark.run(order=3)
+def test2():
+    print("test2")
+
+@pytest.mark.run(order=1)
+def test3():
+    print("test3")
+
+----------------------------------------------------------------
+
+Data Parameterization:
+
+py.test -v -s test_parameterization_rough.py
+
+import pytest
+
+@pytest.mark.parametrize("num, result",[(1,11), (2,22), (3,33), (4,44)])
+def test_calculation(num,result):
+    assert 11*num == result
+
+-------------------------------------------------------------------
+
+To read data from a config file:
+
+1. Create a config.ini file under Configuration folder:
+
+[common info]
+
+baseUrl = https://app.hubspot.com/login
+
+2. Create a ReadConfig class under Utility folder in order to access the config parameter
+
+import configparser
+
+config = configparser.RawConfigParser()
+config.read("../../../Configurations/config.ini")
+
+class ReadConfig():
+
+    @staticmethod
+    def baseUrl():
+        url = config.get('common info','baseUrl')
+        return url
+
+ 3. Now in our test case class use the static method with class name inorder to access config parameter
+
+from Utilities.readProperties import ReadConfig
+
+self.driver.get(ReadConfig.baseUrl()) 
+
+
+-----------------------------------------------------------------------
+Generate Logs:
+
+1. Create a LogGen class under Utility folder in order to create the logs in Logs folder > automation.log file
+
+import logging
+
+class LogGen:
+
+    @staticmethod
+    def logGen():
+        for handler in logging.root.handlers[:]:
+            logging.root.removeHandler(handler)
+        logging.basicConfig(filename="../../../Logs/automation.log",
+                        format = '%(asctime)s: %(levelname)s: %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p'
+                        )
+
+        logger = logging.getLogger()
+        logger.setLevel(logging.INFO)
+        return logger
+
+2. Now in our test case class use the static method with class name inorder to access logger object
+
+from Utilities.customLogger import LogGen
+
+logger = LogGen.logGen()
+
+self.logger.info("***********Verify Data Parameterization | Screenshot Capture***************")
+self.logger.info("***********Verify Config Property| Log Generation***************")
+
+----------------------------------------------------------------------------------------------------
+To run test case on a specific browser:
+
+py.test -v -s test_log_ss_param_config.py --browser chrome
+py.test -v -s com/qa/pytestsessions/test_data_driven_excel.py --browser firefox
+py.test -v -s com/qa/pytestsessions/test_data_driven_excel.py    #default case
+
+Make the following changes in conftest.py file:
+
+@pytest.fixture()
+def setup(browser):
+    if browser == 'chrome':
+        driver = webdriver.Chrome(ChromeDriverManager().install())
+    elif browser == 'firefox':
+        driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
+    else:
+        driver = webdriver.Chrome(ChromeDriverManager().install()) #By default Chrome
+    return driver
+    
+
+def pytest_addoption(parser):     #This will get the browser value from CLI/Hooks
+    parser.addoption("--browser")
+
+@pytest.fixture()
+def browser(request):             #This will return the browser value to the setup method
+    return request.config.getoption("--browser")
+
+
+-----------------------------------------------------------------------------------------------------
+
+ExcelUtility:
+
+1. Create a ExcelUtility under Utility folder in order to read/write excel data
+
+import openpyxl
+
+def getRowCount(file,sheetName):
+    workbook = openpyxl.load_workbook(file)
+    sheet = workbook[sheetName]
+    return(sheet.max_row)
+
+
+def getColumnCount(file,sheetName):
+    workbook = openpyxl.load_workbook(file)
+    sheet = workbook[sheetName]
+    return(sheet.max_column)
+
+def readData(file,sheetName,rownum,colNum):
+    workbook = openpyxl.load_workbook(file)
+    sheet = workbook[sheetName]
+    return sheet.cell(row=rownum, column=colNum).value
+
+def writeData(file,sheetName,rownum,colNum,data):
+    workbook = openpyxl.load_workbook(file)
+    sheet = workbook[sheetName]
+    data = sheet.cell(row=rownum, column=colNum).value
+    workbook.save(file) 
+
+
+--------------------------------------------------
+
+or use xlrd package
+
+import xlrd
+
+workbook = xlrd.open_workbook('DataFile.xlsx')
+sheet = workbook.sheet_by_name('registration')
+
+#get total number of rows
+rowCount = sheet.nrows
+
+#get total number of columns
+colCount = sheet.ncols
+
+for curr_row in range(1,rowCount):
+    urlValue = sheet.cell_value(curr_row,0)
+    firstName = sheet.cell_value(curr_row, 1)
+    lastName = sheet.cell_value(curr_row, 2)
+    emailId = sheet.cell_value(curr_row, 3)
+

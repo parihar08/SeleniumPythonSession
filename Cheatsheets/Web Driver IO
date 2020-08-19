@@ -1,0 +1,207 @@
+Web Driver IO: 
+
+To run the test: Go to main project folder: /Users/Parihar08/Desktop/Study/WebDriver-IO-Practice and run
+npm run test
+
+To run specific test:
+npm test -- --spec ./test/internettest.js
+
+npm test -- --spec ./test/blazetest.js
+
+// For executing test case on specific environment:
+
+ENV=qa npm test -- --spec ./test/internettest.js
+
+To run a test suite:
+
+npm run --suite elements     //where elements is the suite name
+
+// Or second way is
+
+npm run elements             //where elements is the suite name
+
+Check if Node and NPM is installed
+
+node -v
+
+npm -v
+
+For Node.js Upgrade:
+
+Linux/Mac:
+
+The module n makes version-management easy:
+
+sudo npm install n -g
+For the latest stable version:
+
+sudo n stable
+For the latest version:
+
+sudo n latest
+
+Create a folder on your system and import the same in VSCode workspace: e.g.
+/Users/Parihar08/Desktop/Study/WebDriver-IO-Practice
+
+Go to terminal
+
+npm init
+
+npm install webdriverio --save-dev
+
+npm install @wdio/cli
+
+#Web Driver IO Configuration - This creates a wdio.config.js file
+./node_modules/.bin/wdio config
+
+#Install Chai which will provide Assertion library for our Javascript framework
+npm install chai --save-dev
+
+npm install chai-webdriverio --save-dev
+
+#Install our local runner where we can run our test cases
+
+npm install local-runner --save-dev
+
+#Go to wdio.config.js file
+ * Function to be executed before a test (in Mocha/Jasmine) starts.
+     */
+    beforeTest: function () {
+        const chai = require('chai')
+        const chaiWebdriver = require('chai-webdriverio').default
+        chai.use(chaiWebdriver(browser))
+
+        global.assert = chai.assert
+        global.should = chai.should
+        global.expect = chai.expect
+     },
+    /**
+
+#Remove the following from package.js 
+  "scripts": {
+"test": "echo \"Error: no test specified\" && exit 1"
+},
+
+ "@rpii/wdio-html-reporter": "^6.0.7",
+
+# and add
+  "scripts": {
+    
+    "test": "node ./node_modules/.bin/wdio ./wdio.conf.js"
+  },
+
+-----------------------------------------------------
+In order to run Selenium Standalone server manually:
+
+Download the selenium standalone server jar file
+
+Go to that folder in the terminal and run below command
+
+Sandeeps-MacBook-Air:Study Parihar08$ java -jar selenium-server-standalone-3.141.59.jar -port 4545
+---------------------------------------------------------------------------------------------------
+
+In order to run test suites, we need to make the following changes:
+
+1. In wdio.conf.js  file, Add suites tag:
+
+suites:{
+        elements:[
+            './test/elements/*.js'
+        ]
+    },
+
+//for adding multiple suites:
+
+ suites:{
+        elements:[
+            './test/elements/*.js'
+        ],
+        waits:[
+            './test/waits/*.js'
+        ]
+    },
+
+ 2. In package.json file, add the elements suite to scripts tag:
+
+  "scripts": {
+    
+    "test": "node ./node_modules/.bin/wdio ./wdio.conf.js",
+    "elements": "./node_modules/.bin/wdio ./wdio.conf.js --suite elements"
+  },
+
+
+//  for adding multiple suites:
+
+    "scripts": {
+    
+    "test": "node ./node_modules/.bin/wdio ./wdio.conf.js",
+    "elements": "./node_modules/.bin/wdio ./wdio.conf.js --suite elements",
+    "waits": "./node_modules/.bin/wdio ./wdio.conf.js --suite waits"
+  },
+----------------------------------------------
+
+Install Allure Report dependencies:
+
+npm install @wdio/allure-reporter --save-dev
+
+npm install -g allure-commandline --save-dev
+
+After running this, allure reporter dependency will be added in package.json file as below:
+
+  "devDependencies": {
+    "@wdio/allure-reporter": "^6.3.6",
+
+Also, add following to wdio.conf.js file in the Reporters section:
+
+   reporters: ['spec'
+            ,['allure',
+             {outputDir: 'allure-results',
+            disableWebdriverStepsReporting: true,
+            disableWebdriverScreenshotsReporting: true,
+            }
+        ]
+    ],
+
+Run the test case or test suite:
+After that go to the project path in the terminal and run 
+allure generate && allure open 
+command inorder to generate Allure report
+
+cd /Users/Parihar08/Desktop/Study/WebDriver-IO-Practice
+
+Sandeeps-MacBook-Air:WebDriver-IO-Practice Parihar08$ allure generate && allure open
+
+//Run below command if facing issues of cleaning report after each run
+allure generate --clean allure-results && allure open
+
+
+---------------------------------------------
+
+To run same test case on multiple environments:
+
+Create a url.js file and define all the environments as below:
+
+module.exports={
+    qa:   'http://www.google.com',
+    dev:  'http://www.amazon.com',
+    stag: 'http://www.facebook.com',
+    prod: 'http://www.apple.com'
+
+} 
+
+In the wdio.conf.js file add the below code at the top:
+
+const url = require("./url")
+const ENV = process.env.ENV
+
+if(!ENV ||  !['qa', 'dev', 'stag', 'prod'].includes(ENV)){
+     console.log('Please choose valid environment value ENV= qa|dev|stag|prod')
+     process.exit()
+}
+
+// and change the baseURL as:
+baseUrl: url[process.env.ENV],
+
+//For executing test case use:
+
+ENV=qa npm test -- --spec ./test/internettest.js

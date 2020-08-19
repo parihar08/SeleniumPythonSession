@@ -1,0 +1,95 @@
+Uploading project file to GITHUB:
+
+Go to Project Directory:
+cd /Users/Parihar08/Desktop/Study/WDIO-POM-Framework
+
+git init
+
+Connect the project to git repository:
+
+git remote add origin https://github.com/parihar08/WDIO-POM-Framework.git
+
+git config --global user.name "parihar08"
+
+git config --global user.email "sparihar08@yahoo.com"
+
+git status
+
+git add .
+
+git status
+
+git commit -m 'Uploading WebDriverIO-POM Framework project to github'
+
+git push -u origin master
+
+
+#Git Pull will pull the complete project from github to local when we pull for first time 
+#and later increment changes will be pulled
+
+git pull
+
+#Creating a new branch
+
+git checkout -b branchname1
+git checkout -b branchname2
+
+#Switching to a specific branch
+
+git checkout branchname1
+
+#Merge changes to master
+
+git checkout master
+git pull origin master
+git merge branchname1
+git push -u origin master
+
+git pull origin master
+git merge branchname2
+git push -u origin master
+
+
+--------------------------------------------------------------------------------------------------------
+
+Jenkins:
+
+Go to directory where jenkins war file is downloaded:
+
+cd /Users/Parihar08/Desktop/Study/
+
+java -jar jenkins.war
+
+#HTML publisher provides below flag to see Extent Reports and graphical HTML views within the Jenkins UI.
+
+java -Dhudson.model.DirectoryBrowserSupport.CSP="" -jar -jenkins.war
+
+Jenkins Configuration:
+
+http://locahost:8080
+
+Create a Freestyle project e.g. SeleniumPythonSession
+
+Configure the project:
+
+Under Source Code Management choose GIT and provide GIT repository url:
+https://github.com/parihar08/SeleniumPythonSession.git
+
+Under Build section, choose shell command and enter below command to run test case through Jenkins
+py.test -v -s com/qa/pytestsessions/test_data_driven_excel.py --html=data_driven_test_report
+
+Apply > Save > Build the project
+
+--------------------------------------------------------------------------------------------------------
+How to find Java Home directory from MAC terminal?
+
+echo $JAVA_HOME
+
+or
+
+$(/usr/libexec/java_home)
+
+How to find Maven Home directory from MAC terminal?
+
+mvn -version
+

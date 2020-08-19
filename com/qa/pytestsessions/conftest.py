@@ -6,15 +6,17 @@ from selenium import  webdriver
 import time
 import pytest
 
-@pytest.fixture(params=['chrome','firefox'],scope='class')
-def init_driver(request):
-    if request.param == 'chrome':
+#@pytest.fixture(params=['chrome','firefox'],scope='class')
+
+@pytest.fixture(params=['chrome'],scope='class')
+def init_driver(request,browser):
+    if request.param == 'chrome' and browser == 'chrome':
         driver = webdriver.Chrome(ChromeDriverManager().install())
-    elif request.param == 'firefox':
+    elif request.param == 'chrome' and browser == 'firefox':
         driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
     else:
         driver = webdriver.Chrome(ChromeDriverManager().install()) #By default Chrome
-    request.cls.driver = driver
+    request.cls.driver = driver  #Making driver instance available to the complete class
     yield
     driver.close()
 
@@ -29,12 +31,12 @@ def init_driver(request):
 #   return driver
 
 
-#def pytest_addoption(parser):     #This will get the browser value from CLI/Hooks
-#    parser.addoption("--browser")
+def pytest_addoption(parser):     #This will get the browser value from CLI/Hooks
+    parser.addoption("--browser")
 
-#@pytest.fixture()
-#def browser(request):             #This will return the browser value to the setup method
-#    return request.config.getoption("--browser")
+@pytest.fixture(scope='class')
+def browser(request):             #This will return the browser value to the setup method
+    return request.config.getoption("--browser")
 
 #Adding PyTest HTML Report
 
