@@ -1,5 +1,9 @@
 #Robot Framework with Selenium
 
+https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html
+
+https://franz-see.github.io/Robotframework-Database-Library/api/0.5/DatabaseLibrary.html
+
 pip3 install selenium
 
 pip3 install robotframework
@@ -9,8 +13,59 @@ pip3 list
 pip3 show robotframework
 pip3 check robotframework
 
-pip3 install robotframework-seleniumlibrary
+pip3 install robotframework-seleniumlibrary==3.3.1
+
+pip3 install robotframework-pabot       #Parallel execution
+
+pip3 install robotframework-datadriver==0.3.1  #Data driven execution
+
+pip3 install pymysql	#Connect to MySQL
+
+pip3 install robotframework-databaselibrary   #Database testing
 
 #Install Intellibot selenium library patched plugin
 
 #Test case file extension: .robot
+
+#To run test case
+
+robot com/qa/robotframework/testcases/firsttestcase.robot
+
+TC1 Login Function
+    [Tags]  Sanity
+    log to console  This Login test case
+
+#Run test case with specific tag
+robot --include=Sanity com/qa/robotframework/testcases/tagGroups.robot
+
+#To include multiple tags:
+robot -i Sanity -i Regression com/qa/robotframework/testcases/tagGroups.robot
+
+#To exclude specific tags:
+robot --exclude=Sanity com/qa/robotframework/testcases/tagGroups.robot
+
+#To exclude one tag and include one
+robot -e Regression -i Sanity com/qa/robotframework/testcases/tagGroups.robot
+
+#Sequential execution using regular expressions:
+robot com/qa/robotframework/testcases/data*.robot
+
+#For Parallel execution install robotframework-pabot package:
+pip3 install robotframework-pabot
+
+#To run test cases parallely:
+pabot --processes 3 com/qa/robotframework/testcases/data*.robot
+
+#To run parallely and save results in specified output directory
+pabot --processes 3 --outputdir RobotResults/ com/qa/robotframework/testcases/data*.robot
+
+#For DataDriven testing install robotframework-datadriver==0.3.1
+pip3 install robotframework-datadriver==0.3.1
+
+#Database testing using Robot framework
+
+pip3 install robotframework-databaselibrary
+
+#Connect to MySQL:
+
+pip3 install pymysql

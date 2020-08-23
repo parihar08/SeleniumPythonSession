@@ -1,0 +1,7 @@
+datasources:782fb1f59931248fbbdafd42d09c74cff9f7f899
+commandlineoptions:9f8598a690c7367accf83ead504756ddd374acc9
+suitesfrom:no-suites-from-option
+file:9866a7227a4765670886d6235851b0dd4c87021f
+--suite Suites.Datadriven
+--suite Suites.Datadrivencsv
+--suite Suites.Datadrivenexcel
