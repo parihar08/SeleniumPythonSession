@@ -4,6 +4,8 @@ https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html
 
 https://franz-see.github.io/Robotframework-Database-Library/api/0.5/DatabaseLibrary.html
 
+https://robotframework.org/robotframework/latest/libraries/XML.html
+
 pip3 install selenium
 
 pip3 install robotframework
@@ -35,7 +37,7 @@ TC1 Login Function
     [Tags]  Sanity
     log to console  This Login test case
 
-#Run test case with specific tag
+#Run test case with specific tag 
 robot --include=Sanity com/qa/robotframework/testcases/tagGroups.robot
 
 #To include multiple tags:

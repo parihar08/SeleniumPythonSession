@@ -1,0 +1,28 @@
+{
+	"firstName": "John",
+	"lastName": "Smith",
+	"age": "30",
+	"country": "Canada",
+	"city": [
+		"Banga",
+		"Gurgaon",
+		"Newbury",
+		"Calgary"
+	],
+	"address": {
+		"StreetName": "111 14 Ave",
+		"HouseNumber": "705",
+		"City": "Calgary"
+	},
+	"phonenumber": [
+		{
+			"type": "Home",
+			"number": "323233131"
+		},
+		{
+			"type": "Mobile",
+			"number": "4034048882"
+		}
+	],
+	"rating": "Dolly Minhas"
+}

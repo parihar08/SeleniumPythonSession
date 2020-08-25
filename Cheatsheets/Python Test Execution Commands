@@ -1,4 +1,52 @@
+How to Configure envirionment variable in bash_profile:
 
+cd /Users/Parihar08/
+
+sudo vi ~/.bash_profile
+
+#Setting Gradle Path:
+
+export GRADLE_HOME=/Users/Parihar08/Desktop/Study/gradle-6.6
+export PATH=$GRADLE_HOME/bin:$PATH
+
+#Start gradle:
+gradle
+
+#Check versions:
+gradle -version
+java -version
+mvn -version
+python3 --version
+
+--------------------------------------------------------------------------------------------------------
+#Below is the content of Environment variables configured in my bash profile
+--------------------------------------------------------------------------------------------------------
+# Setting PATH for Python 3.4
+# The orginal version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}:/Users/Parihar08/Documents/workspace/Python With Selenium/Python With Selenium"
+export PATH
+if [-f ~/.git-completion.bash]; then
+   . ~/.git-completion.bash
+fi
+export AXIS_HOME=/Users/Parihar08/Desktop/SOAPUITutorial/axis2-1.6.2
+
+export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH=$JAVA_HOME/bin:$PATH
+export M2_HOME=/Users/Parihar08/Documents/workspace/libs/Maven/apache-maven-3.3.9
+export M2=$M2_HOME/bin
+#export MAVEN_OPTS=-Xms256m -Xmx512m
+export PATH=$M2:$PATH
+export GRADLE_HOME=/Users/Parihar08/Desktop/Study/gradle-6.6
+export PATH=$GRADLE_HOME/bin:$PATH
+
+#Setting the chrome path
+export PATH=/usr/local/bin:$PATH
+
+# Setting PATH for Python 3.8
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.8/bin:${PATH}"
+export PATH              
+--------------------------------------------------------------------
 #How to upgrade pip
 
 pip3 install --upgrade pip
@@ -42,7 +90,6 @@ allure serve reports/
 Generating report to temp directory...
 Report successfully generated to /var/folders/bf/kx7p92dd5b98zbpfr_8rdjbc0000gn/T/5974807130607125642/allure-report
 Starting web server...
-
 
 ------------------------------------------------------------------------------------------------------
 

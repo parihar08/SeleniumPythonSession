@@ -1,0 +1,74 @@
+https://jsonpathfinder.com/
+https://jsonpath.com/
+
+JSON: https://restcountries.eu/rest/v2/alpha/IN
+JSON: http://jsonplaceholder.typicode.com/photos
+XML: http://certtransaction.elementexpress.com
+XML: http://thomas-bayer.com/sqlrest/CUSTOMER/15
+
+
+
+JSON data1:
+
+{
+	"firstName": "John",
+	"lastName": "Smith",
+	"age": "30",
+	"country": "Canada",
+	"city": [
+		"Banga",
+		"Gurgaon",
+		"Newbury",
+		"Calgary"
+	],
+	"address": {
+		"Street Name": "111 14 Ave",
+		"House Number": "705",
+		"City": "Calgary"
+	},
+	"phonenumber": [
+		{
+			"type": "Home",
+			"number": "323233131"
+		},
+		{
+			"type": "Mobile",
+			"number": "4034048882"
+		}
+	],
+	"rating": "Dolly Minhas"
+}
+
+-----------------------------------------------------------
+JSON data2:
+
+{
+	"Name": "John",
+	"Age": "30",
+	"Country": "Canada",
+	"city": [
+		"Banga",
+		"Gurgaon",
+		"Newbury",
+		"Calgary"
+	],
+	"Address": {
+		"Street Name": "111 14 Ave",
+		"House Number": "705",
+		"City": "Calgary",
+		"Number": {
+			"Landline": "323233131",
+			"Mobile": "4034048882"
+		}
+	},
+	"rating": "Dolly Minhas"
+}
+
+#Verify JSON Paths at: https://jsonpath.com/
+
+JSON Paths:
+
+$.Name
+$.city[0]
+$.Address.City
+$.Address.Number.Mobile

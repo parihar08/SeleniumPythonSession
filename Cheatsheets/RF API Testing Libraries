@@ -1,0 +1,171 @@
+JSON and XML files:
+
+JSON: https://restcountries.eu/rest/v2/alpha/IN
+JSON: http://jsonplaceholder.typicode.com/photos
+XML: http://certtransaction.elementexpress.com
+XML: http://thomas-bayer.com/sqlrest/CUSTOMER/15
+
+#Google Places API
+https://developers.google.com/maps/documentation
+https://developers.google.com/places/web-service/overview
+https://developers.google.com/places/web-service/get-api-key
+
+Robot Framework API Testing Libraries
+
+pip3 install robotframework
+pip3 install requests
+pip3 install robotframework-requests
+pip3 install robotframework-jsonlibrary
+
+#Install gradle
+https://gradle.org/releases/
+
+Set Environment variable for Gradle in bash_profile:
+
+cd /Users/Parihar08/
+
+sudo vi ~/.bash_profile
+
+#Setting Gradle Path:
+
+export GRADLE_HOME=/Users/Parihar08/Desktop/Study/gradle-6.6
+export PATH=$GRADLE_HOME/bin:$PATH
+
+#Start gradle:
+gradle
+
+#Download VideoGameDB API from github:
+https://github.com/james-willett/VideoGameDB
+
+#Go to the location where we have extracted the downloaded zip file and run below command
+
+cd /Users/Parihar08/Desktop/Study/VideoGameDB-master
+
+./gradlew bootRun
+
+Open the below url:
+
+http://localhost:8080/swagger-ui/index.html#/Video_Games
+
+#Now create the robot restapi files and execute the test cases"
+
+robot com/qa/rfrestapi/videogameapi/getPostPutDelVideoGames.robot 
+
+	create session  mysession   ${baseUrl}
+    ${header}=  create dictionary  Content-Type=application/json
+
+ #2 ways of sending data in body for POST requests:   
+
+ 1.   ${json}  Get Binary File  ${json_path}/addVideoGames.json
+ 	  ${postresponse}=    post request     mysession  ${resource}   data=${json}    headers=${header}
+
+#addVideoGames.json
+
+{
+  "id": 88,
+  "name": "Sandeep",
+  "releaseDate": "2020-08-23T20:42:39.455Z",
+  "reviewScore": 0,
+  "category": "Parihar",
+  "rating": "Dolly Minhas"
+}
+
+ 2.   ${json}=    create dictionary   id=89   name=Sandeep   releaseDate=2020-08-23T20:42:39.455Z   reviewScore=0    category=Parihar     rating=Dolly Minhas
+
+    ${postresponse}=    post request     mysession  ${resource}   data=${json}    headers=${header}
+
+--------------------------------------------------------------------------------------------------------
+
+#Authentication Types:
+-Basic Authentication
+-Bearer Authentication
+-API Key Authentication
+
+1. Basic Authentication	
+Requires Username and Password. Store Username and Password in a list variable and pass it in the auth parameter along with the session
+
+*** Variables ***
+
+${baseUrl}  http://restapi.demoqa.com
+${parameters}    /authentication/CheckforAuthentication/
+
+*** Test Cases ***
+Basic Authentication Validation
+
+    ${auth}=    create list  ToolsQA    TestPassword
+    create session  mysession   ${baseUrl}  auth=${auth}
+    ${response}=    get request  mysession  ${parameters}
+
+    log to console  Content is: ${response.content}
+
+2. Bearer Authentication
+We have to pass a Bearer Token value in a POST Request along with some data if required
+Token: E4F284BFADA11D01A52508ED7B92FFD7EE0905659F5DED06A4B73FC7739B48A287648801
+
+Include the Content Type and Bearer Token information in the headers
+and in the POST request, pass the headers and data(body)
+
+*** Variables ***
+
+${baseUrl}  https://certtransaction.elementexpress.com
+${bearerToken}    "Bearer E4F284BFADA11D01A52508ED7B92FFD7EE0905659F5DED06A4B73FC7739B48A287648801"
+${file_path}    com/qa/rfrestapi/xmlfiles
+
+*** Test Cases ***
+Bearer Authentication Validation
+
+    create session  mysession   ${baseUrl}
+    ${headers}=  create dictionary  Authorization=${bearerToken}   Content-Type=text/xml
+    ${req_body}=  Get File  ${file_path}/bearerAuthTest.txt
+
+    ${response}=    post request     mysession  /    data=${req_body}    headers=${headers}
+
+    log to console  Response Status Code is: ${response.status_code}
+    log to console  Response Content is: ${response.content}
+    log to console  Response Headers are: ${response.headers}
+
+3. API Key Authentication
+
+https://developers.google.com/maps/documentation
+https://developers.google.com/places/web-service/overview
+https://developers.google.com/places/web-service/get-api-key
+
+API Key Generation:
+1. Create new project in Google Developer Console
+2. Create API for that project
+3. Enable API
+
+#My Google Places API_KEY
+AIzaSyCuYcs3cIUGJC-9Qk7J6YGwke9i5NZCIvs
+
+#Add the API key to your request
+https://maps.googleapis.com/maps/api/place/nearbysearch/json
+  ?location=-33.8670522,151.1957362
+  &radius=500
+  &types=food
+  &name=harbour
+  &key=YOUR_API_KEY
+
+
+*** Variables ***
+
+${baseUrl}  https://maps.googleapis.com
+${resource}     /maps/api/place/nearbysearch/json?
+#${resource}     /maps/api/place/nearbysearch/xml?
+
+*** Test Cases ***
+Google Map Places API Key Authentication Validation
+
+    create session  mysession   ${baseUrl}
+    ${params}=  create dictionary  location=-33.8670522,151.1957362     radius=500      types=food      name=harbour    key=AIzaSyCuYcs3cIUGJC-9Qk7J6YGwke9i5NZCIvs
+
+    ${response}=    get request     mysession   ${resource}     params=${params}
+
+    log to console  Response Status Code is: ${response.status_code}
+    log to console  Response Content is: ${response.content}
+    log to console  Response Headers are: ${response.headers}
+
+    #Validations
+    ${statusCode}=  convert to string   ${response.status_code}
+    should be equal  ${statusCode}  200
+------------------------------------------------------------------------------------------------------------    
